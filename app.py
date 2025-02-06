@@ -12,7 +12,7 @@ def index():
         name = request.form["name"]
         
         # Generate a random lucky number
-        assigned_number = random.randint(1, 78)
+        assigned_number = random.randint(1, 100)
         
         # Save the name and lucky number to a text file
         with open("registrations.txt", "a") as file:
