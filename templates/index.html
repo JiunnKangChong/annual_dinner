@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Dinner 2025 Registration</title>
+</head>
+<body>
+    <h1>Welcome to Annual Dinner 2025! Register Yourself to Get a Unique Number(lucky draw !!!!)</h1>
+
+    <!-- Form to submit the user's name -->
+    <form method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if assigned_number %}
+        <h2>Thank you, {{ name }}! Your unique number is: {{ assigned_number }}</h2>
+    {% endif %}
+
+</body>
+</html>
