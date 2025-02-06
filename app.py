@@ -57,4 +57,4 @@ def home():
 if __name__ == "__main__":
     # Generate and store numbers once when the app starts (only the first time)
     generate_and_store_numbers()
-    app.run(host ='0.0.0.0', port = 80)
+    app.run(debug=True)
