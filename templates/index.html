@@ -15,12 +15,13 @@
         <button type="submit">Submit</button>
     </form>
 
-    <!-- Conditionally display thank you message after form submission -->
+    {% if not name %}
+        <h2 id="hiddenMessage" style="display: block;">Please submit your name to get your lucky number!</h2>
+    {% endif %}
+
+    <!-- Show the thank you message after form submission -->
     {% if name %}
         <h2>Thank you, {{ name }}! Your lucky number is: {{ assigned_number }}</h2>
-    {% else %}
-        <!-- Initially hidden message placeholder -->
-        <h2 id="thankYouMessage" style="display: none;">Please submit your name to get your lucky number!</h2>
     {% endif %}
 
 </body>
