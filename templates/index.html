@@ -4,20 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Annual Dinner 2025 Registration</title>
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevent form from submitting and reloading the page
+
+            // Get the user's name
+            const name = document.getElementById("name").value;
+
+            // Generate a random lucky number (you can replace this with actual logic)
+            const luckyNumber = Math.floor(Math.random() * 78);
+
+            // Update the page content with a thank you message and the lucky number
+            const thankYouMessage = document.getElementById("thankYouMessage");
+            thankYouMessage.innerHTML = `Thank you, ${name}! Your lucky number is: ${luckyNumber}`;
+            thankYouMessage.style.display = "block"; // Show the message
+        }
+    </script>
 </head>
 <body>
-    <h1>Welcome to Annual Dinner 2025! Register Yourself to Get a Unique Number(lucky draw !!!!)</h1>
+    <h1>Welcome to Annual Dinner 2025! Register Yourself to Get a Unique Number (lucky draw !!!!)</h1>
 
     <!-- Form to submit the user's name -->
-    <form method="POST">
+    <form onsubmit="submitForm(event)">
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" required>
         <button type="submit">Submit</button>
     </form>
 
-    {% if assigned_number %}
-        <h2>Thank you, {{ name }}! Your unique number is: {{ assigned_number }}</h2>
-    {% endif %}
+    <!-- Initially hidden thank you message -->
+    <h2 id="thankYouMessage" style="display: none;"></h2> 
 
 </body>
 </html>
+
