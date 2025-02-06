@@ -13,13 +13,11 @@
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" required>
         <button type="submit">Submit</button>
-    </form>
-
     {% if name %}
         <h2>Thank you, {{ name }}! Your lucky number is: {{ assigned_number }}</h2>
     {% else %}
         <h2 id="thankYouMessage" style="display: none;"></h2> 
     {% endif %}
-
+    </form>
 </body>
 </html>
